@@ -12,7 +12,7 @@ func main() {
 	for ind := range num {
 		curr := 1
 		for i := 0; i < 5 && ind+i < len(num); i++ {
-			x, _ := strconv.Atoi(num[ind+i])
+			x, _ := strconv.Atoi(num[ind+i : ind+i+1])
 			curr *= x
 		}
 		if curr > max {
