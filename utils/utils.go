@@ -4,8 +4,11 @@ import "math"
 
 func IsPrime(num int) bool {
 	floatNum := float64(num)
-	for i := 2; i <= int(math.Floor(math.Sqrt(floatNum))); i++ {
-		if num%i == 0 {
+	if (num%2 == 0) || (num%3 == 0) {
+		return false
+	}
+	for i := 1; (6*i - 1) <= int(math.Floor(math.Sqrt(floatNum))); i++ {
+		if num%(6*i-1) == 0 || num%(6*i+1) == 0 {
 			return false
 		}
 	}
