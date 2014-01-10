@@ -13,7 +13,7 @@ func main() {
 	primes := make(chan int,max)
 	sum := make(chan int)
 	var done sync.WaitGroup
-	go worker(primes, sum)
+	go sumIt(primes, sum)
 	for i := 3; i < max; i += 2 {
 		done.Add(1)
 		go func(num int) {
@@ -28,7 +28,7 @@ func main() {
 	fmt.Println(<-sum)
 }
 
-func worker(primes, send chan int){
+func sumIt(primes, send chan int){
 	sum := 2
 	for i:= range primes{
 		sum+=i
