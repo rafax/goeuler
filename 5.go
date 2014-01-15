@@ -13,7 +13,6 @@ func main() {
 }
 
 func divisibleByAll(num, rangeEnd int) bool {
-	//for i := 1; i <= rangeEnd; i++ {
 	for i := rangeEnd; i >= 1; i-- {
 		if num%i != 0 {
 			return false
